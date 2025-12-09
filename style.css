@@ -1,0 +1,43 @@
+body {
+    background: rgb(218, 218, 218);
+}
+
+.container {
+    background: white;
+    padding: 1rem;
+    margin: 2rem auto;
+    border-radius: 1rem;
+}
+
+h1 {
+    text-align: center;
+}
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}
+
+.scsmsg {
+    text-align: center;
+    color: green;
+}
+
+.form-group {
+    margin: 1rem 0;
+}
+
+.form-group input {
+    width: 100%;
+}
+
+.submit {
+    background: rgb(0, 90, 224);
+    color: white;
+    border: none;
+    padding: .35rem .7rem;
+    border-radius: .35rem;
+}

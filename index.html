@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Product Complaint Form</h1>
+        <form action="index.php" method="POST">
+            <div class="form-group">
+                <label for="name">Full Name: <sup>*</sup></label>
+                <input  class="form-control" type="text" name="name" id="name">
+                <span class="error" id="nameErr"></span>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address: <sup>*</sup></label>
+                <input class="form-control" type="email" name="email" id="email">
+                <span class="error" id="emailErr"></span>
+            </div>
+            <div class="form-group">
+                <label for="productId">Product Name or ID:</label>
+                <input class="form-control" type="text" name="productId" id="productId">
+                <span class="error" id="productIdErr"></span>
+            </div>
+            <div class="form-group">
+                <label for="purchaseDate">Date of Purchase:</label><br>
+                <input class="purchaseDate" type="date" name="purchaseDate" id="purchaseDate">
+                <span class="error" id="purchaseDateErr"></span>
+            </div>
+            <div class="form-group">
+                <label for="issue">Describe the issue: <sup>*</sup></label>
+                <textarea class="form-control" name="issue" id="issue" rows="5" cols="30"></textarea>
+                <span class="error" id="issueErr"></span>
+            </div>
+            <input type="submit" class="submit" name="submit" value="Submit Complaint">
+        </form>
+    </div>
+    <script str="script.js">
+
+        window.onload = function () {
+            const params = new URLSearchParams(window.location.search);
+
+            // Set field values
+            document.getElementById("name").value = params.get("name") || "";
+            document.getElementById("email").value = params.get("email") || "";
+            document.getElementById("productId").value = params.get("productId") || "";
+            document.getElementById("purchaseDate").value = params.get("purchaseDate") || "";
+            document.getElementById("issue").value = params.get("issue") || "";
+
+            // Set error messages
+            document.getElementById("nameErr").textContent = params.get("nameErr") || "";
+            document.getElementById("emailErr").textContent = params.get("emailErr") || "";
+            document.getElementById("productIdErr").textContent = params.get("productIdErr") || "";
+            document.getElementById("purchaseDateErr").textContent = params.get("purchaseDateErr") || "";
+            document.getElementById("issueErr").textContent = params.get("issueErr") || "";
+        };
+
+    </script>
+</body>
+</html>
